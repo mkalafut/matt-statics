@@ -1,0 +1,13 @@
+A couple of things:
+
+Sorry I was late; I had dinner :-P
+
+The code here is verified to work with g++ - I can't verify it'll work
+in Visual Studio, but it definitely *should*
+
+You may want to edit this to retain your current codestyle.
+
+I want you to be able to learn from this, so I put some comments in the code.
+Seriously, ask me if you don't get how something works.
+
+END OF LINE.

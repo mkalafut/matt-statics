@@ -1,0 +1,82 @@
+//Matt Kalafut
+//Implement classes person and street adress
+#include <iostream>
+#include <string>
+
+class Person 
+{
+ private:
+   StreetAddress address;
+ public:
+  void display();
+}
+
+#include <iostream>
+#include <string>
+#include "StreetAddress.cpp"
+
+
+class Person
+{
+	private:
+		// The name of our person. Kind of important, I suppose.
+		std::string name;
+		// The address of our person.
+		// This will be automatically initialized to be empty.
+		StreetAddress addrObj;
+
+
+	public:
+
+		Person(std::string name, std::string address)
+		{
+			// The "this" keyword is a pointer to the current class
+			// A->B is the same as (*A).B  - Yay shortcuts!
+			// Because we use this->, we can use the same
+			// keywords in the constructor parameters as the
+			// members of the class
+			this->name = name;
+
+			this->addrObj.address = address;
+		}
+
+		void display()
+		{
+			// Send our Person to the pipe.
+			std::cout << "Person<Name: " << name << "; Address: ";
+			addrObj.display();
+			std::cout << ">" << std::endl;
+		}
+
+};
+
+
+#include <iostream>
+#include <string>
+
+
+class StreetAddress
+{
+	public:
+		// The address stored in the class.
+		std::string address;
+
+		// Display the address (no newline so we can use it in Person.
+		void display() {std::cout << this->address;};
+};
+
+
+#include "Person.cpp"
+
+int main()
+{
+	// Initialize both Person classes.
+	Person person1 = Person("Jake the Dog", "512 Treehouse Lane");
+	Person person2 = Person("Mike Wazowski", "22 You-Got-Your-Life-Back-Lane");
+
+	// Call the display functions of both classes.
+	person1.display();
+	person2.display();
+
+	return 0;
+}
